@@ -44,3 +44,14 @@ CREATE TABLE sales (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
+CREATE TABLE purchases (
+    purchase_id INT PRIMARY KEY AUTO_INCREMENT,
+    supplier_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    purchase_date DATE NOT NULL,
+    total_amount DECIMAL(10,2),
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
