@@ -33,3 +33,14 @@ CREATE TABLE products (
     quantity INT DEFAULT 0,
     unit_price DECIMAL(10,2)
 );
+
+CREATE TABLE sales (
+    sale_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    sale_date DATE NOT NULL,
+    total_amount DECIMAL(10,2),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
