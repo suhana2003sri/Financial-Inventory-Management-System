@@ -18,3 +18,10 @@ CREATE TABLE customers (
     contact VARCHAR(20),
     email VARCHAR(100)
 );
+
+CREATE TABLE suppliers (
+    supplier_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    contact VARCHAR(20),
+    email VARCHAR(100)
+);
