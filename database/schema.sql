@@ -63,3 +63,21 @@ CREATE TABLE expenses (
     expense_date DATE NOT NULL,
     description VARCHAR(255)
 );
+
+CREATE TABLE receivables (
+    receivable_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT,
+    amount DECIMAL(10,2) NOT NULL,
+    due_date DATE,
+    status VARCHAR(50) DEFAULT 'Pending',
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+CREATE TABLE payables (
+    payable_id INT PRIMARY KEY AUTO_INCREMENT,
+    supplier_id INT,
+    amount DECIMAL(10,2) NOT NULL,
+    due_date DATE,
+    status VARCHAR(50) DEFAULT 'Pending',
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+);
